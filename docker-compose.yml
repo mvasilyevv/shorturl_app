@@ -1,0 +1,14 @@
+services:
+  shorturl_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shorturl_app_container
+    ports:
+      - "8081:80"
+    volumes:
+      - ./:/app
+      - shorturl_data:/app/data
+
+volumes:
+  shorturl_data:
